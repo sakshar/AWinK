@@ -37,7 +37,7 @@ conda install -c bioconda seqkit
 Open the terminal and follow the steps below to run RAmbler from scratch:
 <pre>
   cd ~
-  git clone https://github.com/sakshar/AWinK.git
+  git clone https://github.com/anonymous/AWinK.git
   cd AWinK/scripts
   bash extractUnikmers.sh prefix k
   python read2UnikmerMap.py
