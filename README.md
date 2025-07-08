@@ -29,7 +29,7 @@ conda install -c bioconda seqkit
 
 `extractUnikmers.sh` contains the required commands to perform step A (Extract unikmers)
 `read2UnikmerMap.py` contains the required functions to perform step B (Barcode reads)  
-`awink.py` contains the required fucntions to execute AWinK's steps C and D (Assign reads to bins and Select reads)
+`awink.py` contains the required fucntions to execute AWinK's steps C and D (Assign reads to bins and Select reads)  
 `assembly.sh` contains the required commands to assemble the AWinK selected reads using hifiasm (step E: Assemble reads)
 
 # Execution
