@@ -9,7 +9,7 @@ Create a conda environment first:
 
 `conda create -n awink python=3.8 numpy xlsxwriter biopython`
 
-This will create a conda environment named rambler with the afforementioned packages. Then activate the environment with:
+This will create a conda environment named awink with the afforementioned packages. Then activate the environment with:
 
 `conda activate awink`
 
@@ -34,7 +34,7 @@ conda install -c bioconda seqkit
 
 # Execution
 
-Open the terminal and follow the steps below to run RAmbler from scratch:
+Open the terminal and follow the steps below to run AWinK from scratch:
 <pre>
   cd ~
   git clone https://github.com/anonymous/AWinK.git
