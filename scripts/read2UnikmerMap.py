@@ -51,28 +51,33 @@ def barcode_reads_with_length(unikmer_map, read_file, k):
     return read_to_unikmer_with_readLength_map
 
 
-k = "value of k for k-mer; in this study k=21"
-depth = "coverage depth of the ultra-deep sequencing data"
+def mapper_executor():
+    k = "value of k for k-mer; in this study k=21"
+    depth = "coverage depth of the ultra-deep sequencing data"
 
-dir = "path to parent directory"
-unikmerTxtFile = dir + "path to $prefix.unikmers inside the jellyfish output directory"
-readFile = dir + "/path to ultra-deep sequencing read file (fastq/fasta)"
+    dir = "path to parent directory"
+    unikmerTxtFile = dir + "path to $prefix.unikmers inside the jellyfish output directory"
+    readFile = dir + "/path to ultra-deep sequencing read file (fastq/fasta)"
 
-outDir = dir + "/barcode_"+str(k)+"mers"
-create_directory(outDir)
+    outDir = dir + "/barcode_"+str(k)+"mers"
+    create_directory(outDir)
 
-unikmerMapFile = outDir + "/unikmerMap.pkl"
-readBarcodeWithLengthMapFile = outDir + "/read2UnikmerWithReadLengthMap.pkl"
+    unikmerMapFile = outDir + "/unikmerMap.pkl"
+    readBarcodeWithLengthMapFile = outDir + "/read2UnikmerWithReadLengthMap.pkl"
 
-print("====== initializing ======")
-print(f"input HiFi reads: {readFile}")
-print(f"output map: {readBarcodeWithLengthMapFile}")
-print("==========================")
-print(f"step 1: loading unikmers")
-unikmerMap = get_unikmer_map(unikmerTxtFile)
-writePickle(unikmerMap, unikmerMapFile)
-print(f"step 2: barcoding reads with unikmers and lengths")
-read2unikmerLengthMap = barcode_reads_with_length(unikmerMap, readFile, k)
-print(f"step 3: writing read barcodes with read lengths")
-writePickle(read2unikmerLengthMap, readBarcodeWithLengthMapFile)
-print("======== done!!! =========")
+    print("====== initializing ======")
+    print(f"input HiFi reads: {readFile}")
+    print(f"output map: {readBarcodeWithLengthMapFile}")
+    print("==========================")
+    print(f"step 1: loading unikmers")
+    unikmerMap = get_unikmer_map(unikmerTxtFile)
+    writePickle(unikmerMap, unikmerMapFile)
+    print(f"step 2: barcoding reads with unikmers and lengths")
+    read2unikmerLengthMap = barcode_reads_with_length(unikmerMap, readFile, k)
+    print(f"step 3: writing read barcodes with read lengths")
+    writePickle(read2unikmerLengthMap, readBarcodeWithLengthMapFile)
+    print("======== done!!! =========")
+
+
+if __name__ == "__main__":
+    mapper_executor()

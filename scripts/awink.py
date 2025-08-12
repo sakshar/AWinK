@@ -312,6 +312,7 @@ def select_reads_based_on_unikmer_distribution(binnedReadsOnUnikmerCountFile, ta
 
     writePickle(selectedReadIDs, selectedReadsFile)        
 
+
 def extract_selected_binned_reads(selectedReadsFile, readFile, outFile, depths):
     selectedReads = loadPickle(selectedReadsFile)
     readsDict = get_reads_dict(readFile)
@@ -331,8 +332,7 @@ def extract_selected_binned_reads(selectedReadsFile, readFile, outFile, depths):
     print("writing extracted reads: completed!!!")
 
 
-if __name__ == "__main__":
-
+def executor():
     k = "value of k for k-mer; in this study k=21"
     coverage = "coverage depth of the ultra-deep sequencing data"
 
@@ -365,3 +365,7 @@ if __name__ == "__main__":
     select_reads_based_on_unikmer_distribution(binnedReadsOnUnikmerCountFile, coverage_depths, coverage, genome_size, selectedBinnedReadIDsFile, binnedReadsOnUnikmerCountCSVFile)
     print(f"step 5: extract selected reads")
     extract_selected_binned_reads(selectedBinnedReadIDsFile, readFile, extractedBinnedReadsFilePath, coverage_depths)
+
+
+if __name__ == "__main__":
+    executor()
