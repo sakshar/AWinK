@@ -332,7 +332,7 @@ def extract_selected_binned_reads(selectedReadsFile, readFile, outFile, depths):
     print("writing extracted reads: completed!!!")
 
 
-def executor():
+def awink_executor():
     k = "value of k for k-mer; in this study k=21"
     coverage = "coverage depth of the ultra-deep sequencing data"
 
@@ -368,4 +368,4 @@ def executor():
 
 
 if __name__ == "__main__":
-    executor()
+    awink_executor()
